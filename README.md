@@ -1,2 +1,2 @@
-# javascript-track
-dotTheory - JavaScript Track
+# dotTheory - JavaScript Track
+JavaScript Training Track
