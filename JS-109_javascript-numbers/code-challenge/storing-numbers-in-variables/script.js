@@ -6,3 +6,6 @@ Code Challenge: Storing Numbers In Variables
 const age = 37;
 // Task 2: Add a second variable named price and assign it a floating point value (a number with a decimal).
 const price = 99.99;
+// Print values to the console
+console.log(`age: ${age}`);
+console.log(`price: ${price}`);

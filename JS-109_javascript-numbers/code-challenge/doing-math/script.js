@@ -11,3 +11,7 @@ const salesTotal = retailPrice * quantity;
 const profit = salesTotal - wholesalePrice * quantity;
 // Task 3: Create one last variable name `profitPerUnit`. In that variable store the amount of profit you made for each unit. You can calculate this by dividing the profit by the quantity.
 const profitPerUnit = profit / quantity;
+// Print the values to the console
+console.log(`salesTotal: ${salesTotal}`);
+console.log(`profit: ${profit}`);
+console.log(`profitPerUnit: ${profitPerUnit}`);
