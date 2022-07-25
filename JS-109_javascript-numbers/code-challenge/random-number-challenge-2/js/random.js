@@ -14,7 +14,7 @@ const input2 = prompt('Please input another number.');
 const numRange1 = parseInt(input1);
 const numRange2 = parseInt(input2);
 
-if (numRange1 && numRange2) {
+if (typeof numRange1 === 'number' && !isNaN(numRange1) && typeof numRange2 === 'number' && !isNaN(numRange2)) {
   let upperLimit;
   let lowerLimit;
   // Arrange the numbers. The lower value should be the lower limit and the
@@ -28,7 +28,7 @@ if (numRange1 && numRange2) {
   }
   // Do not allow equal values
   if (numRange1 === numRange2) {
-    main.innerHTML = `<p>${mesInputShouldBeNumbers} ${mesTryAgain}</p>`;
+    main.innerHTML = `<p>${mesNumbersShouldBeDifferent} ${mesTryAgain}</p>`;
   } else {
     const rand = Math.floor(Math.random() * (upperLimit - lowerLimit + 1) + lowerLimit);    
 
