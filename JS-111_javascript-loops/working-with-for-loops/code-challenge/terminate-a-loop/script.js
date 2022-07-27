@@ -5,8 +5,6 @@
 let message = "supercalifragilisticexpialidocious";
 message = message.length;
 
-console.log(`${message} ${message / 2}`);
-
 for ( let i = 1; i < message; i++ ) {
   if ( i === message / 2 ) {
     console.log('The loop has terminated...');
