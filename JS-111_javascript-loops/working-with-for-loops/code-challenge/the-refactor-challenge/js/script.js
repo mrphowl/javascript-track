@@ -8,11 +8,9 @@
  * @returns {string} rgb with random color value
  */
 const randomRGB = () => {
+  // Pick a number from 0 - 255
   const getRandomColorValue = () => Math.floor(Math.random() * 256);
-  const red = getRandomColorValue();
-  const blue = getRandomColorValue();
-  const green = getRandomColorValue();
-  return `rgb( ${red}, ${green}, ${blue} )`;
+  return `rgb( ${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()} )`;
 }
 
 let html = '';
