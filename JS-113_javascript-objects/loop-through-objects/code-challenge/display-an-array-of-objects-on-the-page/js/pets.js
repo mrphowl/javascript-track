@@ -33,9 +33,8 @@ const petCard = pet => {
   `;
 };
 
-let html = '';
-for ( let i = 0; i < pet.length; i++ ) {
-  html += petCard(pet[i]);
-}
+const main = document.querySelector('main');
 
-document.querySelector('main').innerHTML = html;
+for ( let i = 0; i < pet.length; i++ ) {
+  main.insertAdjacentHTML('beforeend', petCard(pet[i]));
+}
