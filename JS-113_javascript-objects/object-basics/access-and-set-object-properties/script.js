@@ -12,3 +12,5 @@ const addy = {
 addy.age = 4;
 // Task 2: Add a new property named isFriendly and set its value to true.
 addy.isFriendly = true;
+
+console.log(addy);

@@ -10,3 +10,5 @@ const addy = {
   age: 3,
   breed: 'pug'
 };
+
+console.log(addy);
