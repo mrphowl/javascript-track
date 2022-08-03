@@ -27,9 +27,9 @@ class Student {
     get level() {
       if ( this.credits > 90 ) {
         return 'Senior';
-      } else if ( this.credits >= 61 && this.credits <= 90 ) {
+      } else if ( this.credits > 60 ) {
         return 'Junior';
-      } else if ( this.credits >= 31 && this.credits <=60 ) {
+      } else if ( this.credits > 30 ) {
         return 'Sophomore';
       } else {
         return 'Freshman';
