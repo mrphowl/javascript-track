@@ -1,0 +1,17 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "Flash cards app made with Express.js and Pug templating.",
+  "repository": "https://github.com/mrphowl/javascript-track",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^3.0.2"
+  }
+}
