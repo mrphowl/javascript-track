@@ -21,6 +21,19 @@ router.get('/', (req, res) => {
   res.redirect(`/cards/${id}?side=question`);
 });
 
+// Error handling for invalid card ID
+router.use('/:id', (req, res, next) => {
+  const id = parseInt(req.params.id);
+  const card = getCardById(id);
+
+  if( ! card ) {
+    const err = new Error('Not found');
+    err.status = 404;
+    return next(err);
+  }
+  next();
+});
+
 router.get('/:id', (req, res) => {
   const name = req.cookies.username;
   const id = parseInt(req.params.id);
