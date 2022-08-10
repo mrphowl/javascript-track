@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 
   // redirect to the same card and pass "question" as `side` parameter
   if( !side ) {
-    res.redirect(`/cards/${id}?side=question`);
+    return res.redirect(`/cards/${id}?side=question`);
   }
   // I added, in `cards`, an 'id' property that starts with 1. 'id' in databases (RDB) are normally unique positive integers and the count starts with 1.
   const card = getCardById(id);
