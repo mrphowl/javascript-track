@@ -13,9 +13,28 @@ module.exports = sequelize => {
       return shortDesc;
     }
   }
+  const titleMaxLen = 30;
   Article.init({
-    title: Sequelize.STRING,
-    author: Sequelize.STRING,
+    title: {
+      type: Sequelize.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Title is required.'
+        },
+        len: {
+          msg: `Title must not exceed ${titleMaxLen} characters.`,
+          args: [0, titleMaxLen]
+        }
+      }
+    },
+    author: {
+      type: Sequelize.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Author is required.'
+        }
+      }
+    },
     body: Sequelize.TEXT
   }, { sequelize });
 
