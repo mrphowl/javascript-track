@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { User } = require('../models');
 
 router.get('/', (req, res) => {
   // Get the username cookie
@@ -29,6 +30,17 @@ router.get('/hello', (req, res) => {
 router.post('/hello', (req, res) => {
   res.cookie('username', req.body.username);
   res.redirect('/');
+});
+
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  const user = await User.findOne({ where: { username } });
+  console.log(user);
+  res.render('login');
 });
 
 // clear the username cookie and go back to /hello

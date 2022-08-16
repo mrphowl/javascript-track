@@ -52,3 +52,23 @@ form.set-updater button#change-set {
   justify-content: space-between;
   padding: 0 20px;
 }
+/* Login form */
+form.login-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+form.login-form .form-label {
+  flex: 0 0 30%;
+  margin: 10px 0;
+}
+form.login-form .form-input {
+  flex: 0 0 60%;
+  margin: 10px 0;
+  text-align: left;
+  padding: 5px 10px;
+}
+form.login-form button.form-submit {
+  margin-top: auto;
+}
