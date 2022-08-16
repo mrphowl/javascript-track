@@ -46,3 +46,9 @@ li.set-item:hover {
 form.set-updater button#change-set {
   display: none;
 }
+/* Card Sets */
+.namecard-cardsets {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
