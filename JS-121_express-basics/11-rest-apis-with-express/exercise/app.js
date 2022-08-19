@@ -6,16 +6,16 @@ const records = require('./records');
 app.use(express.json());
 
 // Send a GET request to /quotes to READ a list of quote.
-app.get('/quotes', async (req, res) => {
+app.get('/quotes', async (req, res, next) => {
   try {
     const quotes = await records.getQuotes();
     res.json(quotes);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 // Send a GET request to /quotes/:id to READ (view) a quote.
-app.get('/quotes/:id', async (req, res) => {
+app.get('/quotes/:id', async (req, res, next) => {
   try {
 	  const quote = await records.getQuote(req.params.id);
     if( quote ) {
@@ -24,11 +24,11 @@ app.get('/quotes/:id', async (req, res) => {
       res.status(404).json({ message: 'Not found.' });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 // Send a POST request to /quotes to CREATE new a quote.
-app.post('/quotes', async (req, res) => {
+app.post('/quotes', async (req, res, next) => {
   const { quote, author } = req.body;
   try {
     if( quote && author ) {
@@ -38,11 +38,11 @@ app.post('/quotes', async (req, res) => {
       res.status(400).json({ message: 'Quote and author required.'});
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 // Send a PUT request to /quotes/:id to UPDATE (edit) a quote.
-app.put('/quotes/:id', async (req, res) => {
+app.put('/quotes/:id', async (req, res, next) => {
   const { id } = req.params;
   const { quote, author } = req.body;
   try {
@@ -56,11 +56,11 @@ app.put('/quotes/:id', async (req, res) => {
       res.status(404).json({ message: 'Quote not found.' });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 // Send a DELETE request to /quotes/:id to DELETE a quote.
-app.delete('/quotes/:id', async (req, res) => {
+app.delete('/quotes/:id', async (req, res, next) => {
   try {
 	  const record = await records.getQuote(req.params.id);
 	  if ( record ) {
@@ -70,18 +70,33 @@ app.delete('/quotes/:id', async (req, res) => {
 	    res.status(404).json('Quote not found.');
 	  }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 // Send a GET request to /quotes/quote/random to READ (view) a random quote.
-app.get('/quotes/quote/random', async (req, res) => {
+app.get('/quotes/quote/random', async (req, res, next) => {
   try {
 	  const quote = await records.getRandomQuote();
 	  res.json(quote);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 });
 
+app.use( (req, res, next) => {
+  const error = new Error('Not found');
+  error.status = 404;
+  next(error);
+});
+
+// Error handler
+app.use( (err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({
+    error: {
+      message: err.message
+    }
+  });
+});
 
 app.listen(3000, () => console.log('Quote API listening on port 3000!'));
