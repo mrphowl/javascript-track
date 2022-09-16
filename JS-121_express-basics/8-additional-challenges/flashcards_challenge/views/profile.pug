@@ -1,0 +1,21 @@
+extends layout
+
+block main
+  section.namecard.namecard-body
+    include includes/single-heading
+    +section-heading('Profile')
+    if currentUser
+      #content.profile
+        .row
+          span.label Username
+          span.content= username
+        .row
+          span.label Name
+          span.content= name
+        .row
+          span.label Email
+          span.content= email
+        .row.profile-links
+          a(href='/') Home
+          | | #[a(href='/cards') Cards]
+          | | #[a(href='/logout') Logout]

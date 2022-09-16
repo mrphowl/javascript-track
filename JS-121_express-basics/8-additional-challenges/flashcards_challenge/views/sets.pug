@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  section.namecard
+    include includes/single-heading
+    +section-heading('Sets')
+  section.setlist
+    p Select a card set from the list. Pick #[strong All cards] to use cards from all card sets.
+    .list.sets
+      span.list-item(class=!sets || !setSelected ? 'selected' : '') All cards
+      if sets
+        each item in sets
+          if setSelected === item.id
+            span.list-item.selected= item.name
+          else
+            a.list-item(href=`/sets/select/${item.id}`)= item.name
+    p #[a(href='/') Home] | #[a(href='/cards') View Cards]
