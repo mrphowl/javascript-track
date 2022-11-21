@@ -1,2 +1,2 @@
 // Create a variable named 'myName'
-var myName = "Paul Eliczar Adraneda";
+const myName = "Paul Eliczar Adraneda";
