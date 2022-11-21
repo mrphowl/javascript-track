@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JS-117: AJAX Basics - AJAX Concepts
+  Code challenge: Create an XML file
+-->
+<songs>
+  <!-- Task 1: Use a <song> tag to add a new 'song' to this XML document. -->
+  <song>
+    <!-- Task 2: Add a song title by inserting a <title> tag inside the <song> tag. Put the name of any song you'd like inside it. -->
+    <title>Demons</title>
+    <!-- Task 3: Add an <artist> tag inside the song and provide the name of the musician or musical group. -->
+    <artist>Imagine Dragons</artist>
+  </song>
+</songs>
