@@ -3,7 +3,7 @@
  * 
  * Code challenge: Event Delegation
  */
-let section = document.getElementsByTagName('section')[0];
+const section = document.getElementsByTagName('section')[0];
 
 section.addEventListener('click', (e) => {
   // Task 1: Add a condition that changes the background of the <input> elements only.
