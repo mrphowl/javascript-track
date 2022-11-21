@@ -3,7 +3,7 @@
  * 
  * Code challenge: Adding an Event Listener
  */
-var warning = document.getElementById("warning");
+const warning = document.getElementById("warning");
 // Task 1: Select the button with the ID makeItRed and assign it to the button variable.
 const button = document.querySelector('#makeItRed');
 // Task 2: Add a click event listener to button. Pass an empty function as the second parameter.
