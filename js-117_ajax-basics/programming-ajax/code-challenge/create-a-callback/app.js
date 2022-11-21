@@ -3,7 +3,7 @@
  * 
  * Code challenge: Create a callback
  */
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 // Task 1: Add an onreadystatechange event handler. Add an anonymous function, but don't put any code inside it.
 xhr.onreadystatechange = function() {};
 xhr.open('GET', 'sidebar.html');

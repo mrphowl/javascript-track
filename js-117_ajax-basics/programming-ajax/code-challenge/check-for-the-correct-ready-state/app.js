@@ -3,7 +3,7 @@
  * 
  * Code challenge: Check for the correct ready state
  */
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
   // Task 1: Add a conditional statement inside the onreadystatechange event
   // handler that tests to make sure the server has sent back its complete
