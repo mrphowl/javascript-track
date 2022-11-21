@@ -15,7 +15,7 @@ while ( ! gameOver && guesses < 3 ) {
 
   console.log(`${number}, ${answer}`);
 
-  if ( +answer === number ) {
+  if ( Number(answer) === number ) {
     alert('You got it!');
     gameOver = true;
   } else {
