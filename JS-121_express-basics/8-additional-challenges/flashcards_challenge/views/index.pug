@@ -1,0 +1,11 @@
+extends app.pug
+
+block intro
+  if currentUser
+    h1.namecard-prompt Let's get started
+    p.namecard-body.
+      Choose a card set by clicking the #[strong Change] link above or click below.
+    a.namecard-submit(href='/cards') Begin!
+  else
+    h1.namecard-prompt You need to login first.
+    a.namecard-submit(href='/login') Login

@@ -1,0 +1,16 @@
+extends layout
+
+block main
+  section.namecard.namecard-body
+    include includes/single-heading
+    +section-heading('Login')
+    form.namecard-form.login-form(action='/users/login', method='post')
+      .form-input-group
+        label.form-label Username:
+        input.form-control(type='text', name='username')
+      .form-input-group
+        label.form-label Password:
+        input.form-control(type='password', name='password')
+      button.namecard-submit(type='submit') Submit
+    .login-footer
+      a(href='/users/register', title='Create account') Register

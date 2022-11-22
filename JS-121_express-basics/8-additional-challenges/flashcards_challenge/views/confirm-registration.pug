@@ -1,0 +1,9 @@
+extends layout
+
+block main
+  section.namecard.namecard-body
+    include includes/single-heading
+    +section-heading('Registration Successful')
+    #content.
+      #[a(href='/login', title='Login') Login] or go back to
+      #[a(href="/", title='Homepage') Homepage]
