@@ -3,24 +3,28 @@
  * 
  * Code challenge: Display An Array of Objects on the Page
  */
-const pet = [];
+const pets = [];
 
 function createPet(name, type, breed, age, photo) {
-  return {
+  const pet = {
     name: name,
     type: type,
     breed: breed,
     age: age,
     photo: photo
   };
+  
+  pets.push(pet);
+  
+  return pet;
 }
 
-pet.push(createPet('Sussie', 'Dog', 'Australian Shepherd', 4, 'img/aussie.jpg'));
-pet.push(createPet('Hotdog', 'Dog', 'Dachshund', 5, 'img/dachshund.jpg'));
-pet.push(createPet('Jeff', 'Dog', 'Golden Retriever', 6, 'img/golden.jpg'));
-pet.push(createPet('Perry', 'Cat', 'Persian', 4, 'img/persian.jpg'));
-pet.push(createPet('Dude', 'Dog', 'Pug', 3, 'img/pug.jpg'));
-pet.push(createPet('Miming "the ulam thief"', 'Cat', 'Domestic Shorthair', 100, 'img/tabby.jpg'));
+createPet('Sussie', 'Dog', 'Australian Shepherd', 4, 'img/aussie.jpg');
+createPet('Hotdog', 'Dog', 'Dachshund', 5, 'img/dachshund.jpg');
+createPet('Jeff', 'Dog', 'Golden Retriever', 6, 'img/golden.jpg');
+createPet('Perry', 'Cat', 'Persian', 4, 'img/persian.jpg');
+createPet('Dude', 'Dog', 'Pug', 3, 'img/pug.jpg');
+createPet('Miming "the ulam thief"', 'Cat', 'Domestic Shorthair', 100, 'img/tabby.jpg');
 
 const petCard = pet => {
   return `
@@ -35,6 +39,6 @@ const petCard = pet => {
 
 const main = document.querySelector('main');
 
-for ( let i = 0; i < pet.length; i++ ) {
-  main.insertAdjacentHTML('beforeend', petCard(pet[i]));
+for ( let i = 0; i < pets.length; i++ ) {
+  main.insertAdjacentHTML('beforeend', petCard(pets[i]));
 }
