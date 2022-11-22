@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  section#content
+    h2 Welcome, #{name}!
+    //- Task 1: Add a form with a 'goodbye' button
+    form(action='/goodbye', method='post')
+      button.btn(type='submit') goodbye
