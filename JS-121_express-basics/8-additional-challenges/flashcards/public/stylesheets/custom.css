@@ -1,0 +1,74 @@
+/* Flash cards */
+.flashcards {
+  display: block;
+  position: initial;
+  margin-top: 1rem;
+}
+/* Card controls */
+.card-control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  align-items: center;
+}
+.card-flip-wrapper {
+  background-image: none !important;
+}
+img.card-flip-img {
+  max-width: 40px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+/* Card Sets */
+ul.sets {
+  display: inline-grid;
+  gap: 10px;
+  padding: 0;
+  width: calc(100% - (15px * 2));
+}
+li.set-item {
+  background-color: #d64226;
+  border-radius: 20px 10px;
+  border-width: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  height: auto;
+  padding: 15px 0;
+  padding: auto;
+  width: 100%;
+}
+li.set-item:hover {
+  background-color: salmon;
+}
+form.set-updater button#change-set {
+  display: none;
+}
+/* Card Sets */
+.namecard-cardsets {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+/* Login form */
+form.login-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+form.login-form .form-label {
+  flex: 0 0 30%;
+  margin: 10px 0;
+}
+form.login-form .form-input {
+  flex: 0 0 60%;
+  margin: 10px 0;
+  text-align: left;
+  padding: 5px 10px;
+}
+form.login-form button.form-submit {
+  margin-top: auto;
+}

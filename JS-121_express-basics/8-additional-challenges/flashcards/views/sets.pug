@@ -1,0 +1,13 @@
+extends app
+
+block sets
+  #content
+    form#updater.set-updater(action='/sets/select', method="post")
+      input#set-name.set-name-hidden(type='hidden', name='id')
+      button#change-set(type='submit', value='change_set') Change
+    p Choose a card set.
+    ul.sets(type='none')
+      li.set-item(data-id='0') All
+      each set in sets
+        li.set-item(data-id= set.id)= set.name
+  script(src="/static/js/sets.js")

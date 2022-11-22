@@ -1,0 +1,20 @@
+extends layout
+
+block main
+  section.namecard
+    .namecard-login
+      if name
+        p.namecard-greeting Welcome, #{name}!
+        form.namecard-exit(action='/goodbye', method='post')
+          button(type='submit')
+            img(src="/static/img/close.svg", alt="Goodbye button")
+      else
+        p.namecard-greeting Hello, student!
+    .namecard-cardsets
+      if cardSetName
+        p.cardset-name= cardSetName
+        p.cardset-control
+          a(href='/sets', title='Change card set') Change
+    block intro
+    block sets
+  block card
