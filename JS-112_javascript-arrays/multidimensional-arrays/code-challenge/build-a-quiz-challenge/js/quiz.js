@@ -28,7 +28,6 @@ const quizItems = [
 ];
 
 // 2. Store the number of questions answered correctly
-let correct = 0;
 const rightAnswers = [];
 const wrongAnswers = [];
 
@@ -41,7 +40,6 @@ const wrongAnswers = [];
 */
 for ( let i = 0; i < quizItems.length; i++ ) {
   if ( prompt(quizItems[i][0]).toLowerCase() === quizItems[i][1] ) {
-    correct++;
     rightAnswers.push(quizItems[i][0]);
   } else {
     wrongAnswers.push(quizItems[i][0]);
@@ -49,7 +47,7 @@ for ( let i = 0; i < quizItems.length; i++ ) {
 }
 
 // 4. Display the number of correct answers to the user
-document.querySelector('h1').innerHTML = `You got ${correct} correct ${correct > 1 ? 'answers' : 'answer'}.`;
+document.querySelector('h1').innerHTML = `You got ${rightAnswers.length} correct ${rightAnswers.length > 1 ? 'answers' : 'answer'}.`;
 
 // Create a list item element with the given string
 let listItem = question => `<li>${question}</li>`;
