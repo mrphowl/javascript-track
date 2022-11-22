@@ -1,0 +1,30 @@
+body {
+  background-color: #b0d0a8;
+  font-family: helvetica, sans-serif;
+}
+
+#content {
+  margin: 3em auto;
+  width: 90%;
+  text-align: center;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  border-style: hidden;
+}
+
+a {
+  display: block;
+  margin: 5em auto;
+  font-size: 2em;
+  text-decoration: none;
+  padding: 1em;
+  background-color: aquamarine;
+  border-radius: 1em;
+  color: #c16e00;
+  width: 6em;
+}

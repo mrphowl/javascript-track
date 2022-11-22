@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JS-117: AJAX Basics - AJAX Concepts
+  Code challenge: Finish the XML document
+-->
+<songs>
+  <song>
+    <title>Demons</title>
+    <artist>Imagine Dragons</artist>
+  </song>
+  <!-- Task 1: Add 3 more songs to this XML document. Include a title and artist for each song. -->
+  <song>
+    <title>Kings Never Die</title>
+    <artist>Eminem</artist>
+  </song>
+  <song>
+    <title>Time After Time</title>
+    <artist>Tuck &amp; Patti</artist>
+  </song>
+  <song>
+    <title>Strawberry Bubblegum</title>
+    <artist>Justin Timberlake</artist>
+  </song>
+</songs>
